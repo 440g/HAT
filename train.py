@@ -381,9 +381,9 @@ def latency_npu(args):
     for _ in tqdm(range(args.latiter)):
         start = time.time()
 
-        for _ in range(decoder_iterations): 
-            dec.decoder(prev_output_tokens=prev_output_tokens_test_with_beam,
-                            encoder_out=encoder_out_test_with_beam)   
+        # for _ in range(decoder_iterations): 
+        dec.decoder(prev_output_tokens=prev_output_tokens_test_with_beam,
+                        encoder_out=encoder_out_test_with_beam)   
 
         end = time.time()
         decoder_latencies.append((end - start) * 1000)
